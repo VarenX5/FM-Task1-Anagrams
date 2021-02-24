@@ -1,6 +1,5 @@
 package com.foxminded.android.task1anagrams;
 
-import android.util.Log;
 
 import java.util.ArrayList;
 public class Reversing {
