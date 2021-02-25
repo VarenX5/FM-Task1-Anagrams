@@ -1,12 +1,8 @@
 package com.foxminded.android.task1anagrams;
 
-
-
-
 public class Reversing {
-    Reversing () {
-    }
-    static String reverseWords (String userInput, String filter){
+
+    static String reverseWords(String userInput, String filter) {
         String[] inputWords = userInput.split("\\s");
         String stringOutput = "";
         for (String word : inputWords){
@@ -38,7 +34,7 @@ public class Reversing {
             //checking from right to left
             if(filter.indexOf(word.charAt(wordBackIndex))==-1){
                 if(filter.indexOf(reversedWordBuilder.charAt(currentFrontIndex))!=-1){
-                    while(filter.indexOf(reversedWordBuilder.charAt(currentFrontIndex))!=-1){ 
+                    while(filter.indexOf(reversedWordBuilder.charAt(currentFrontIndex))!=-1){
                         currentFrontIndex++;
                     }
                     reversedWordBuilder.setCharAt(currentFrontIndex,word.charAt(wordBackIndex));
