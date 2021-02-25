@@ -17,47 +17,17 @@ public class Reversing {
         int rightIdx = word.length() - 1;
         int leftIdx = 0;
 
-        while (rightIdx < leftIdx) {
+        while (rightIdx > leftIdx) {
             if (isInFilter(filter, word.charAt(leftIdx))) {
-                // TODO: fill
+                leftIdx++;
             } else if (isInFilter(filter, word.charAt(rightIdx))) {
-                // TODO: fill
+                rightIdx--;
             } else {
-                // TODO: fill
+                reversedWordBuilder.setCharAt(leftIdx, word.charAt(rightIdx));
+                reversedWordBuilder.setCharAt(rightIdx, word.charAt(leftIdx));
+                leftIdx++;
+                rightIdx--;
             }
-        }
-
-
-        int wordBackIndex = word.length() - 1;
-        for (int y = 0; y < (word.length() / 2); y++) {
-            //checking from left to right
-            if (filter.indexOf(word.charAt(y)) == -1) {
-                if (filter.indexOf(reversedWordBuilder.charAt(rightIdx)) != -1) {
-                    while (filter.indexOf(reversedWordBuilder.charAt(rightIdx)) != -1) {
-                        rightIdx--;
-                    }
-                    reversedWordBuilder.setCharAt(rightIdx, word.charAt(y));
-                    rightIdx--;
-
-                } else {
-                    reversedWordBuilder.setCharAt(rightIdx, word.charAt(y));
-                    rightIdx--;
-                }
-            }
-            //checking from right to left
-            if (filter.indexOf(word.charAt(wordBackIndex)) == -1) {
-                if (filter.indexOf(reversedWordBuilder.charAt(leftIdx)) != -1) {
-                    while (filter.indexOf(reversedWordBuilder.charAt(leftIdx)) != -1) {
-                        leftIdx++;
-                    }
-                    reversedWordBuilder.setCharAt(leftIdx, word.charAt(wordBackIndex));
-                    leftIdx++;
-                } else {
-                    reversedWordBuilder.setCharAt(leftIdx, word.charAt(wordBackIndex));
-                    leftIdx++;
-                }
-            }
-            wordBackIndex--;
         }
 
         return reversedWordBuilder.toString();
