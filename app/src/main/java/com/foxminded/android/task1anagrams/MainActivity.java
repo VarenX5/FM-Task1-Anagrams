@@ -1,14 +1,12 @@
 package com.foxminded.android.task1anagrams;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.TextView;
 
-//import android.app.Reversing;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Reversing reverser = new Reversing();
         TextView wordsOutput = findViewById(R.id.textViewOutput);
         EditText filter = findViewById(R.id.editTextFilter);
         EditText userInput = findViewById(R.id.editTextUserInput);
