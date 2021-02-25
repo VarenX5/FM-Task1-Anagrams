@@ -3,4 +3,5 @@
     <string name="ignored_characters">Ignored characters:</string>
     <string name="button_text">Reverse all letters</string>
     <string name="userInput">Text for reversing:</string>
+    <string name="the_result_words">The result:</string>
 </resources>

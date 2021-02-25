@@ -1,15 +1,12 @@
 package com.foxminded.android.task1anagrams;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-//import android.app.Reversing;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,12 +15,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Reversing reverser = new Reversing();
         TextView wordsOutput = findViewById(R.id.textViewOutput);
         EditText filter = findViewById(R.id.editTextFilter);
         EditText userInput = findViewById(R.id.editTextUserInput);
-
-        userInput.addTextChangedListener(new TextWatcher() {
+        TextWatcher tW = new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -31,17 +26,16 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(!(s.length()==0)){
-                    wordsOutput.setText(Reversing.reverseWords(s.toString(), filter.getText().toString()));
-                } else{
-                    wordsOutput.setText("");
-                }
+                wordsOutput.setText(Reversing.reverseWords(userInput.getText().toString(), filter.getText().toString()));
             }
 
             @Override
             public void afterTextChanged(Editable s) {
 
             }
-        });
+        };
+
+        filter.addTextChangedListener(tW);
+        userInput.addTextChangedListener(tW);
     }
 }
