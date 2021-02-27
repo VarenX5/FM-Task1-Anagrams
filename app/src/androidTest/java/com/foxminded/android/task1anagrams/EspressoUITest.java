@@ -10,6 +10,8 @@ import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.runner.AndroidJUnit4;
 
+import com.squareup.spoon.Spoon;
+
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
@@ -30,7 +32,6 @@ import static org.hamcrest.Matchers.allOf;
 import static org.junit.Assert.assertEquals;
 
 @LargeTest
-@RunWith(AndroidJUnit4.class)
 public class EspressoUITest {
 
     @Rule
@@ -61,6 +62,7 @@ public class EspressoUITest {
             appCompatEditTextInput.perform(replaceText(inputArray[y]));
             appCompatEditTextFilter.perform(replaceText(filterArray[y]));
             textViewOutput.check(matches(withText(expectedArray[y])));
+            Spoon.screenshot(mActivityTestRule.getActivity(),"Test_number_"+y);
         }
     }
 
