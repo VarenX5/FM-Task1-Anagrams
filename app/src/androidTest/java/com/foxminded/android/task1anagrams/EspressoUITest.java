@@ -1,7 +1,6 @@
 package com.foxminded.android.task1anagrams;
 
 
-
 import androidx.test.espresso.ViewInteraction;
 import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
@@ -41,13 +40,13 @@ public class EspressoUITest {
                         isDisplayed()));
 
         String[] filterArray = {"", "abrc", "1234567890", "ab", "985sg"};
-        String[] inputArray = {"abcdefg", "abrac", "afht5g", "abracadabra","d98mrg s8he's sg5fsh"};
-        String[] expectedArray = {"gfedcba", "abrac", "gthf5a", "abradacabra","r98mdg s8'ehs sg5hsf"};
+        String[] inputArray = {"abcdefg", "abrac", "afht5g", "abracadabra", "d98mrg s8he's sg5fsh"};
+        String[] expectedArray = {"gfedcba", "abrac", "gthf5a", "abradacabra", "r98mdg s8'ehs sg5hsf"};
         for (int y = 0; y < filterArray.length; y++) {
             appCompatEditTextInput.perform(replaceText(inputArray[y]));
             appCompatEditTextFilter.perform(replaceText(filterArray[y]));
             textViewOutput.check(matches(withText(expectedArray[y])));
-            Spoon.screenshot(mActivityTestRule.getActivity(),"Test_number_"+y);
+            Spoon.screenshot(mActivityTestRule.getActivity(), "Test_number_" + y);
         }
     }
 

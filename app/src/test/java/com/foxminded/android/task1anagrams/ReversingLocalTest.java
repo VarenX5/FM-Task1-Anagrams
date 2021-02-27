@@ -9,8 +9,8 @@ public class ReversingLocalTest {
     @Test
     public void reverseWords() {
         String[] filterArray = {"", "abrc", "1234567890", "ab", "985sg"};
-        String[] inputArray = {"abcdefg", "abrac", "afht5g", "abracadabra","d98mrg s8he's sg5fsh"};
-        String[] expectedArray = {"gfedcba", "abrac", "gthf5a", "abradacabra","r98mdg s8'ehs sg5hsf"};
+        String[] inputArray = {"abcdefg", "abrac", "afht5g", "abracadabra", "d98mrg s8he's sg5fsh"};
+        String[] expectedArray = {"gfedcba", "abrac", "gthf5a", "abradacabra", "r98mdg s8'ehs sg5hsf"};
         for (int y = 0; y < filterArray.length; y++) {
             String actual = Reversing.reverseWords(inputArray[y], filterArray[y]);
             assertEquals(actual, expectedArray[y]);
