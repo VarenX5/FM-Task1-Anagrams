@@ -1,5 +1,4 @@
 # FoxMinded-Task1-Anagrams
-# FoxMinded-Task1-Anagrams
 Task 1: Create an application that rotates a string according to a user-defined algorithm.
 Required functionality
 •	Write an Android application that accepts one string as an input.
