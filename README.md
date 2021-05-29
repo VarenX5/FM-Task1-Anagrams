@@ -1,4 +1,4 @@
-# FoxMinded-Task1-Anagrams
+# FoxMinded-Task1-Anagrams (Android, Java)
 Task 1: Create an application that rotates a string according to a user-defined algorithm.
 
 Required functionality
